@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import NavBar from './components/NavBar'
+import LineaColchones from './components/LineaColchones'
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        Holaaaaaa!!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Entra a la web de reactjs ;)
-        </a>
-      </header>
+    <div>
+    
+      <NavBar />
+
+      <LineaColchones />
+
     </div>
   );
 }
