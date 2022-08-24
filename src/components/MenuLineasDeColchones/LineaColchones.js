@@ -13,6 +13,8 @@ const LineaColchones = () => {
             </ul>
         </section>
     )
+
+    
 }
 
 export default LineaColchones
