@@ -1,7 +1,9 @@
 import './App.css'
 import NavBar from './components/navbar/NavBar'
-import LineaColchones from './components/MenuLineasDeColchones/LineaColchones'
+import LineaColchones from './components/ItemListContainer/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './components/ejemplos/Ejemplos';
+
 
 const App = () => {
 
@@ -9,8 +11,7 @@ const App = () => {
     <div>
       <NavBar />
       <LineaColchones />
-
-
+      <ItemListContainer />
     </div>
   );
 }
