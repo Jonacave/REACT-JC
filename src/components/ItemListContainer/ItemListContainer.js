@@ -1,25 +1,31 @@
+import { useEffect, useState } from "react"
+import { pedirDatos } from "../../helpers/pedirDatos"
+import ItemList from "./ItemList"
 
-import Contador from "../ItemCount/ItemCount"
-import { Saludo } from "./Saludo"
 
+const ItemListContainer = () => {
 
-const LineaColchones = () => {
+    const [productos, SetProductos] = useState([])
+
+    useEffect(() => {
+        pedirDatos()
+            .then((res) => {
+                SetProductos(res)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                console.log("fin del proceso")
+            })
+    }, [])
 
     return (
-        <section className='menu'>
-            <Saludo usuario="Jona"/>
-            <ul>
-                <h5>Linea de colchones</h5>
-                <li>Line Exclusive</li>
-                <li>Linea Resortes</li>
-                <li>Linea Espuma</li>
-                <li>Linea Stilo</li>
-            </ul>
-        <Contador/>
-        </section>
+        <div>
+            <ItemList productos={productos} />
+        </div>
     )
 
-    
 }
 
-export default LineaColchones
+export default ItemListContainer

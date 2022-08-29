@@ -5,7 +5,7 @@ margin: 0 auto;
 padding: 20px 0;
 
 display: flex;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
 }
 
@@ -19,4 +19,36 @@ align-items: center;
 
     max-width: 900px;
     margin: 50px auto;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30%;
+    margin-bottom: 20px;
+}
+
+.containerProductos{
+max-width: 1300px;
+height: 900px;
+margin: 60px auto;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+align-items: flex-end
+}
+
+.ItemImg{
+    width: 75%;
+    height: 50%;
+}
+
+.Item{
+    max-width: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-style: inset;
+    
 }

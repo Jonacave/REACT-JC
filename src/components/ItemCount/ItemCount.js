@@ -3,7 +3,7 @@ import { useState } from "react"
 const Contador = () => {
 
 
-    const [counter, setCounter] = useState(1)
+    const [counter, setCounter] = useState(0)
     const stock = 5
 
     const handleRestar = () => {
@@ -20,8 +20,7 @@ const Contador = () => {
 
 
     return (
-        <div className="container my-7">
-            <h2>Contador</h2>
+        <div>
             <button onClick={handleRestar} className="btn btn-outline-primary">-</button>
             <span className="mx-2">{counter}</span>
             <button onClick={handleSumar} className="btn btn-outline-primary">+</button>

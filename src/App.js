@@ -1,17 +1,16 @@
 import './App.css'
 import NavBar from './components/navbar/NavBar'
-import LineaColchones from './components/ItemListContainer/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './components/ejemplos/Ejemplos';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 
 
 const App = () => {
 
   return (
     <div>
-      <NavBar />
-      <LineaColchones />
-      <ItemListContainer />
+      <NavBar/>
+      <ItemListContainer/>
     </div>
   );
 }
