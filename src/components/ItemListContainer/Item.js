@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 
 const Item = ({producto}) => {
 
@@ -8,8 +10,8 @@ const Item = ({producto}) => {
             <h3>Modelo: {producto.nombre}</h3>
             <p>Precio : ${producto.precio}</p>
             <p>Stock disponible{producto.stock}</p>
-            <p>{producto.des}... Ver mas... </p>
-            <button className="btn btn-outline-primary">Agregar al carrito</button>
+            <p>{producto.des} </p>
+            <Link to={`/item/${producto.id}`}  className="btn btn-outline-primary">Ver mas</Link>
         </div>
     )
 }

@@ -1,25 +1,15 @@
-.NavBar{
-/* background-color: rgba(110, 188, 240, 0.699); */
-max-width: auto;
-margin: 0 auto;
-padding: 20px 0;
-
-display: flex;
-justify-content: center;
-align-items: center;
+header {
+    background-color: rgba(110, 188, 240, 0.699);
+    max-width: auto;
+    /* margin: 100 auto; */
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* .NavBar-button{
-min-width: 900px;
-display: flex;
-justify-content: space-around;
-align-items: center;
-} */
-.menu {
 
-    max-width: 900px;
-    margin: 50px auto;
-}
+
 
 h2 {
     display: flex;
@@ -29,26 +19,32 @@ h2 {
     margin-bottom: 20px;
 }
 
-.containerProductos{
-max-width: 1300px;
-height: 900px;
-margin: 60px auto;
-display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
-align-items: flex-end
+.containerProductos {
+    max-width: auto;
+    height: 900px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center
 }
 
-.ItemImg{
-    width: 75%;
-    height: 50%;
+.ItemImg {
+    width: 300px;
+    height: 175px;
 }
 
-.Item{
-    max-width: 30%;
+.Item {
+    /* max-width: 30%; */
+    
     padding: 10px;
     margin-bottom: 20px;
     text-align: center;
     border-style: inset;
+
+}
+
+.ItemDetail {
     
+    text-align: center;
 }
