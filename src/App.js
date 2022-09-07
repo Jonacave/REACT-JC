@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
+import Home from './components/Home/Home';
 
 
 const App = () => {
@@ -19,8 +20,10 @@ const App = () => {
 
         <Header />
 
+        
         <Routes>
-          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/' element={<Home/>} />
+          <Route path='/productos' element={<ItemListContainer />} />
           <Route path='/productos/:lineaId' element={<ItemListContainer />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
           <Route path='*' element={<Navigate to="/" />} />
@@ -28,7 +31,7 @@ const App = () => {
           {/* <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contacto />} /> */}
           {/* <Route path='/api' element={<PokeApi />} /> */}
-          {/* <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contacto />} />
           {/* <Route path='*' element={error 404}/> */}
 

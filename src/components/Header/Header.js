@@ -3,17 +3,13 @@ import {Link} from 'react-router-dom'
 
 const Header = () => {
     return (
-        <header className='NavBar'>
+        <header className>
             <img src='/assets/logoElegante.png' alt="logo empresa"/>
-
             <hr></hr>
-            <nav className="NavBar">
-                <Link to='/'>Home</Link>
-                <Link to='/productos/exclusive' >Exclusive</Link>
-                <Link to='/productos/espuma' >Espuma</Link>
-                <Link to='/productos/resortes'>Resortes</Link>  
-            </nav>
-            
+            <Link to='/'>Home</Link>
+                <Link to='/productos' >Productos</Link>
+                <Link to='/nosotros' >Nosotros</Link>
+                <Link to='/contacto' >Contacto</Link>           
             <hr></hr>
         </header>
     )

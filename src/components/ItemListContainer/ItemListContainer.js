@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "./ItemList"
 import { Routes, Route, useParams } from 'react-router-dom';
+import NavBar from "../NavBar/NavBar";
+
 
 
 
@@ -13,7 +15,7 @@ const ItemListContainer = () => {
     const {lineaId} = useParams()
     console.log(lineaId)
 
-
+    
     useEffect(() => {
         setLoading(true)
 
@@ -34,13 +36,19 @@ const ItemListContainer = () => {
             })
     }, [lineaId])
 
+
+
     return (
         <div>
+             {<NavBar/>}
         {
+            
             loading ? <h2>Cargando...</h2>
             : <ItemList productos={productos} />
         }
+       
         </div>
+        
     )
 
 }

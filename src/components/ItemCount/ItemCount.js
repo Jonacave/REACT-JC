@@ -3,11 +3,11 @@ import { useState } from "react"
 const Contador = () => {
 
 
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(1)
     const stock = 5
 
     const handleRestar = () => {
-        if (counter > 0) {
+        if (counter > 1) {
             setCounter(counter - 1)
         }
     }
