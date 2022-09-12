@@ -2,12 +2,13 @@ import './App.css'
 import Header from './components/Header/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import PokeApi from './components/ejemplos/PokeApi';
+// import PokeApi from './components/ejemplos/PokeApi';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
 import Home from './components/Home/Home';
+import CartContext from './CartContext/CartContext';
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
           {/* <Route path='/api' element={<PokeApi />} /> */}
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contacto />} />
+          <Route path='/cart' element={<CartContext />} />
           {/* <Route path='*' element={error 404}/> */}
 
         </Routes>

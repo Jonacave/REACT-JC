@@ -1,10 +1,5 @@
-import { useState } from "react"
 
-const Contador = () => {
-
-
-    const [counter, setCounter] = useState(1)
-    const stock = 5
+const Contador = ({max, counter, setCounter, handlerAgregar}) => {
 
     const handleRestar = () => {
         if (counter > 1) {
@@ -13,7 +8,7 @@ const Contador = () => {
     }
 
     const handleSumar = () => {
-        if (counter < stock) {
+        if (counter < max) {
             setCounter(counter + 1)
         }
     }
@@ -21,9 +16,18 @@ const Contador = () => {
 
     return (
         <div>
-            <button onClick={handleRestar} className="btn btn-outline-primary">-</button>
+            <button onClick={handleRestar} 
+            className="btn btn-outline-primary">-</button>
+
             <span className="mx-2">{counter}</span>
-            <button onClick={handleSumar} className="btn btn-outline-primary">+</button>
+
+            <button onClick={handleSumar} 
+            className="btn btn-outline-primary">+</button>
+
+            <br/>
+            <button  onClick={handlerAgregar}
+            className="btn btn-primary my-2 ">
+            Agregar al carrito</button>
         </div>
     )
 }

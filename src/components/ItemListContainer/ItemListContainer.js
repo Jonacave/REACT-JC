@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "./ItemList"
-import { Routes, Route, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import NavBar from "../NavBar/NavBar";
 
 
@@ -10,12 +10,12 @@ import NavBar from "../NavBar/NavBar";
 const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState (true)
+    const [loading, setLoading] = useState(true)
 
-    const {lineaId} = useParams()
+    const { lineaId } = useParams()
     console.log(lineaId)
 
-    
+
     useEffect(() => {
         setLoading(true)
 
@@ -24,9 +24,9 @@ const ItemListContainer = () => {
                 if (!lineaId) {
                     setProductos(res)
                 } else {
-                    setProductos (res.filter ((prod) => prod.linea === lineaId))
+                    setProductos(res.filter((prod) => prod.linea === lineaId))
                 }
-    
+
             })
             .catch((error) => {
                 console.log(error)
@@ -40,15 +40,15 @@ const ItemListContainer = () => {
 
     return (
         <div>
-             {<NavBar/>}
-        {
-            
-            loading ? <h2>Cargando...</h2>
-            : <ItemList productos={productos} />
-        }
-       
+            {<NavBar />}
+            {
+
+                loading ? <h2>Cargando...</h2>
+                    : <ItemList productos={productos} />
+            }
+
         </div>
-        
+
     )
 
 }

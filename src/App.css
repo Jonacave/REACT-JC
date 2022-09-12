@@ -25,6 +25,10 @@ header {
     align-items: center;
 }
 
+.link{
+    text-decoration: none;
+    font-size: 30px;
+}
 .containerProductos {
     max-width: auto;
     height: 900px;

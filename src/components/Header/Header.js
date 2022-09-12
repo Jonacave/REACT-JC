@@ -1,15 +1,14 @@
-import CarWidget from "../CarWidget/CarWidget"
 import {Link} from 'react-router-dom'
 
 const Header = () => {
     return (
-        <header className>
+        <header>
             <img src='/assets/logoElegante.png' alt="logo empresa"/>
             <hr></hr>
-            <Link to='/'>Home</Link>
-                <Link to='/productos' >Productos</Link>
-                <Link to='/nosotros' >Nosotros</Link>
-                <Link to='/contacto' >Contacto</Link>           
+            <Link to='/'className="link">Home</Link>
+                <Link to='/productos'className="link" >Productos</Link>
+                <Link to='/nosotros' className="link">Nosotros</Link>
+                <Link to='/contacto' className="link">Contacto</Link>           
             <hr></hr>
         </header>
     )
