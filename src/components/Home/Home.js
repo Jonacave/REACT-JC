@@ -1,10 +1,12 @@
+import ItemListContainer from "../ItemListContainer/ItemListContainer"
+
 const Home = () => {
 
     return (
         <div className="container my-5">
 
         
-            <img className="ImgHome" alt="colchon" src='/assets/portada.jpg '/> 
+        <ItemListContainer/>
             
         </div>
     )

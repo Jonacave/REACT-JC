@@ -8,39 +8,40 @@ import Nosotros from './components/Nosotros/Nosotros';
 import Contacto from './components/Contacto/Contacto';
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
 import Home from './components/Home/Home';
-import CartContext from './CartContext/CartContext';
+import {CartProvider } from './CartContext/CartContext';
+import Cart from './components/Cart/Cart';
 
 
 const App = () => {
 
+
+
   return (
 
-    <div>
+    <CartProvider>
 
       <BrowserRouter>
 
         <Header />
 
-        
         <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route path='/' element={<Home />} />
           <Route path='/productos' element={<ItemListContainer />} />
           <Route path='/productos/:lineaId' element={<ItemListContainer />} />
-          <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
+          <Route path='/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='*' element={<Navigate to="/" />} />
-
           {/* <Route path='/nosotros' element={<Nosotros />} />
-          <Route path='/contacto' element={<Contacto />} /> */}
+              <Route path='/contacto' element={<Contacto />} /> */}
           {/* <Route path='/api' element={<PokeApi />} /> */}
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contacto />} />
-          <Route path='/cart' element={<CartContext />} />
+          <Route path='/cart' element={<Cart />} />
           {/* <Route path='*' element={error 404}/> */}
-
         </Routes>
 
-      </BrowserRouter>-
-    </div>
+      </BrowserRouter>
+
+      </CartProvider>
   );
 }
 

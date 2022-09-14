@@ -1,10 +1,21 @@
 * {
     margin: 0;
-    padding: 0; }
+    padding: 0; 
+    background-size: cover;}
 
+    
+
+body{
+    background-image: url(../public/assets/portada3.jpg ) ;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
     .ImgHome{
         width: 100%;
     }
+
+
 header {
     background-color: rgba(110, 188, 240, 0.699);
     max-width: auto;
@@ -54,7 +65,13 @@ header {
     flex-direction: column;
     justify-content: center; 
     align-items: center;
+    font-size: 1.5rem;
+    background-color:rgba(109, 140, 165, 0.699);
 }
 .ImgDetail{
     width: 40rem;
+}
+
+.ImgCar{
+    width: 4rem;
 }

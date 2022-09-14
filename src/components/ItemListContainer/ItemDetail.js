@@ -1,12 +1,17 @@
 import ItemCount from '../../components/ItemCount/ItemCount';
 import { Link } from "react-router-dom"
 
-import { useState } from 'react';
+import {  useState } from 'react';
+import { useCartContext } from '../../CartContext/CartContext';
 
 const ItemDetail = ({ item }) => {
 
+    const {cart, addToCart, isInCart} = useCartContext()
+    console.log (cart)
+    
     const [cantidad, setCantidad] = useState(1)
-
+    
+    
     const handlerAgregar = () => {
         const itemToCart = {
             id: item.id,
@@ -16,7 +21,8 @@ const ItemDetail = ({ item }) => {
             cantidad: cantidad
         }
         
-        console.log(itemToCart)
+        console.log(isInCart(item.id))
+        addToCart (itemToCart)
     }
 
 
@@ -28,6 +34,8 @@ const ItemDetail = ({ item }) => {
             <p>Precio : ${item.precio * cantidad}</p>
             <p>Stock disponible{item.stock}</p>
             <p>{item.des}</p>
+
+
             <ItemCount
                 max={item.stock}
                 counter={cantidad}
