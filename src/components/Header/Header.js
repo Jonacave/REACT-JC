@@ -1,7 +1,10 @@
 import {Link} from 'react-router-dom'
+// import { useCartContext } from '../../CartContext/CartContext'
 import CartWidget from '../CartWidget/CartWidget'
 
 const Header = () => {
+
+    // const {cart} = useCartContext()
     return (
         <header>
             <img src='/assets/logoElegante.png' alt="logo empresa"/>

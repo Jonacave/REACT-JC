@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import React, { useState } from 'react';
 import ItemDetail from "./ItemDetail";
+import Loader from "../Loader/Loader";
 
 
 const ItemDetailContainer = () => {
@@ -29,7 +30,7 @@ const ItemDetailContainer = () => {
         <div>
         {
             loading
-            ? <h2>Cargando...</h2>
+            ? <Loader/>
             : <ItemDetail item={item}/>
         }
         </div>

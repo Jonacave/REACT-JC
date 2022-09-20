@@ -11,7 +11,12 @@ const Item = ({producto}) => {
             <p>Precio : ${producto.precio}</p>
             <p>Stock disponible{producto.stock}</p>
             <p>{producto.des} </p>
-            <Link to={`/item/${producto.id}`}  className="btn btn-outline-primary">Ver mas</Link>
+            {
+                producto.stock > 0
+                ? <Link to={`/item/${producto.id}`}  className="btn btn-outline-primary">Ver mas</Link>
+                : <p className="btn btn-outline-primary"> No hay stock</p> 
+            }
+            
         </div>
     )
 }

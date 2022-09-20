@@ -3,6 +3,7 @@ import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "./ItemList"
 import { useParams } from 'react-router-dom';
 import NavBar from "../NavBar/NavBar";
+import Loader from "../Loader/Loader";
 
 
 
@@ -42,9 +43,9 @@ const ItemListContainer = () => {
         <div>
             {<NavBar />}
             {
-
-                loading ? <h2>Cargando...</h2>
-                    : <ItemList productos={productos} />
+                loading ?
+                <Loader/>
+                : <ItemList productos={productos} />
             }
 
         </div>

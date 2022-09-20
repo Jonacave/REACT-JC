@@ -1,3 +1,4 @@
+import { counter } from "@fortawesome/fontawesome-svg-core";
 import { createContext, useContext } from "react";
 import { useState } from 'react';
 import Swal from 'sweetalert2'
@@ -8,11 +9,16 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addToCart = (item) => {
-        setCart([...cart, item])
+        // return (
+            //    isInCart(item.id)
+            //    ? console.log (item.cantidad)
+            //    : 
+            setCart([...cart, item])
+        // )
     }
 
     const removeItem = (id) => {
-        setCart(cart.filter((item)=> item.id !== id ))
+        setCart(cart.filter((item) => item.id !== id))
     }
 
     const isInCart = (id) => {
@@ -29,13 +35,13 @@ export const CartProvider = ({ children }) => {
 
     const emptyCart = () => {
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Estas seguro?',
+            text: "pensalo bien...",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Si, borrar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire(
@@ -63,6 +69,6 @@ export const CartProvider = ({ children }) => {
 }
 
 
-export  const useCartContext = () => {
+export const useCartContext = () => {
     return useContext(CartContext)
 }

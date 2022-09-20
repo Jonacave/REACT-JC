@@ -1,17 +1,17 @@
 import ItemCount from '../../components/ItemCount/ItemCount';
 import { Link } from "react-router-dom"
 
-import {  useState } from 'react';
+import { useState } from 'react';
 import { useCartContext } from '../../CartContext/CartContext';
 
 const ItemDetail = ({ item }) => {
 
-    const {cart, addToCart, isInCart} = useCartContext()
-    console.log (cart)
-    
+    const { cart, addToCart, isInCart } = useCartContext()
+    console.log(cart)
+
     const [cantidad, setCantidad] = useState(1)
-    
-    
+
+
     const handlerAgregar = () => {
         const itemToCart = {
             id: item.id,
@@ -20,12 +20,12 @@ const ItemDetail = ({ item }) => {
             precio: item.precio,
             cantidad: cantidad
         }
-        
+
         console.log(isInCart(item.id))
-        addToCart (itemToCart)
+        addToCart(itemToCart)
     }
 
-
+    // ver condicional para stock con algun IF, mostra detalles pero no los botones.
     return (
         <div className="ItemDetail">
             <h4>Linea {item.linea}</h4>
@@ -36,17 +36,19 @@ const ItemDetail = ({ item }) => {
             <p>{item.des}</p>
 
 
-            <ItemCount
-                max={item.stock}
-                counter={cantidad}
-                setCounter={setCantidad}
-                handlerAgregar={handlerAgregar}    
-            />
+            {
+                isInCart(item.id)
+                    ? <Link to='/cart' className="btn btn-outline-primary"> Terminar compra</Link>
+                    : <ItemCount
+                        max={item.stock}
+                        counter={cantidad}
+                        setCounter={setCantidad}
+                        handlerAgregar={handlerAgregar}
+                        />
+            }
 
 
 
-            <Link to='/cart' className="btn btn-outline-primary">
-                Terminar compra</Link>
 
 
         </div>
