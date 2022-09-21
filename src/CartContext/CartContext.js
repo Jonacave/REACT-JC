@@ -9,16 +9,31 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addToCart = (item) => {
-        // return (
-            //    isInCart(item.id)
-            //    ? console.log (item.cantidad)
-            //    : 
-            setCart([...cart, item])
-        // )
+            // return (
+                 //    isInCart(item.id)
+                 //    ? console.log (item.cantidad)
+                //    : 
+                 setCart([...cart, item])
+             // )
+        // }
+        
+        // if (!isInCart(item.id)) {
+        //     setCart([...cart, item])
+        // } else {
+        //     console.log(itemRepetido.cantidad)
+        //     const itemRepetido = cart.find(prod => prod.id === item.id)
+        //     itemRepetido.cantidad + item.cantidad > item.stock ? (itemRepetido.cantidad = item.stock) : itemRepetido.cantidad += item.cantidad
+        //     const newCart = cart.filter(prod => prod.id !== item.id)
+        //     setCart([...newCart, itemRepetido])
+        // }
+
     }
 
-    const removeItem = (id) => {
-        setCart(cart.filter((item) => item.id !== id))
+
+
+
+    function removeItem(id) {
+        setCart(cart.filter((item) => item.id !== id));
     }
 
     const isInCart = (id) => {
