@@ -10,6 +10,7 @@ import ItemDetailContainer from './components/ItemListContainer/ItemDetailContai
 import Home from './components/Home/Home';
 import {CartProvider } from './CartContext/CartContext';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
           {/* <Route path='*' element={error 404}/> */}
         </Routes>
 

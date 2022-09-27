@@ -1,4 +1,3 @@
-import { counter } from "@fortawesome/fontawesome-svg-core";
 import { createContext, useContext } from "react";
 import { useState } from 'react';
 import Swal from 'sweetalert2'
@@ -13,7 +12,7 @@ export const CartProvider = ({ children }) => {
                  //    isInCart(item.id)
                  //    ? console.log (item.cantidad)
                 //    : 
-                 setCart([...cart, item])
+                setCart([...cart, item])
              // )
         // }
         
@@ -32,7 +31,7 @@ export const CartProvider = ({ children }) => {
 
 
 
-    function removeItem(id) {
+    const removeItem = (id) => {
         setCart(cart.filter((item) => item.id !== id));
     }
 
@@ -64,8 +63,20 @@ export const CartProvider = ({ children }) => {
                 )
             }
         })
-
     }
+
+    const terminarCompra = (id) => {
+        Swal.fire({
+            title: 'Tu comprar fue realizada con exito!',
+            text: `Tu número de orden es: ${id}`,
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Gracias por tu compra!'
+        })
+        setCart([])
+    }
+
+
 
     return (
         <CartContext.Provider value={{
@@ -75,7 +86,8 @@ export const CartProvider = ({ children }) => {
             cartQuantity,
             cartTotal,
             emptyCart,
-            removeItem
+            removeItem,
+            terminarCompra
 
         }}>
             {children}
