@@ -8,45 +8,20 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addToCart = (item) => {
-            // return (
-                 //    isInCart(item.id)
-                 //    ? console.log (item.cantidad)
-                //    : 
-                setCart([...cart, item])
-             // )
-        // }
-        
-        // if (!isInCart(item.id)) {
-        //     setCart([...cart, item])
-        // } else {
-        //     console.log(itemRepetido.cantidad)
-        //     const itemRepetido = cart.find(prod => prod.id === item.id)
-        //     itemRepetido.cantidad + item.cantidad > item.stock ? (itemRepetido.cantidad = item.stock) : itemRepetido.cantidad += item.cantidad
-        //     const newCart = cart.filter(prod => prod.id !== item.id)
-        //     setCart([...newCart, itemRepetido])
-        // }
-
+        setCart([...cart, item])
     }
-
-
-
-
     const removeItem = (id) => {
         setCart(cart.filter((item) => item.id !== id));
     }
-
     const isInCart = (id) => {
         return cart.some((item) => item.id === id)
     }
-
     const cartQuantity = () => {
         return cart.reduce((acc, item) => acc + item.cantidad, 0)
     }
-
     const cartTotal = () => {
         return cart.reduce((acc, item) => acc + item.cantidad * item.precio, 0)
     }
-
     const emptyCart = () => {
         Swal.fire({
             title: 'Estas seguro?',
@@ -76,8 +51,6 @@ export const CartProvider = ({ children }) => {
         setCart([])
     }
 
-
-
     return (
         <CartContext.Provider value={{
             cart,
@@ -88,13 +61,11 @@ export const CartProvider = ({ children }) => {
             emptyCart,
             removeItem,
             terminarCompra
-
         }}>
             {children}
         </CartContext.Provider>
     )
 }
-
 
 export const useCartContext = () => {
     return useContext(CartContext)

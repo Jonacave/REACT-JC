@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 
-
 const Item = ({producto}) => {
 
     return (
@@ -13,7 +12,7 @@ const Item = ({producto}) => {
             <p>{producto.des} </p>
             {
                 producto.stock > 0
-                ? <Link to={`/item/${producto.id}`}  className="btn btn-outline-primary">Ver mas</Link>
+                ? <Link to={`/item/${producto.id}`}  className="btn btn-outline-primary container my-4">Ver mas</Link>
                 : <p className="btn btn-outline-primary"> No hay stock</p> 
             }
             

@@ -4,8 +4,7 @@ export const pedirDatos = () => {
     return new Promise((resolve, reject) => {
 
         setTimeout(() => {
-            resolve(stock)
-            // reject("promesa rechazada")  
-        }, 2000)
+            resolve(stock)  
+        }, 1550)
     })
 }

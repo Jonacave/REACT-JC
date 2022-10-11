@@ -4,10 +4,7 @@ const Home = () => {
 
     return (
         <div className="container my-5">
-
-        
-        <ItemListContainer/>
-            
+            <ItemListContainer />
         </div>
     )
 }
